@@ -24,3 +24,10 @@ def restaurant():
 
 if __name__ == "__main__":
     restaurant()
+
+
+# book solution notes
+
+# null check:
+#   'if not user_input'
+# .strip() on input
