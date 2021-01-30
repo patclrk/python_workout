@@ -17,7 +17,8 @@ def wordcount(file):
             counts['chars'] += len(line)
             counts['words'] += len(line.split())
             for word in line.split():
-                unique_words.add(word)
+                #unique_words.add(word)
+                unique_words.update(word)
     
     # debug
     #print(f'unique words: {unique_words}')
