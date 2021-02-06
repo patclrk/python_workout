@@ -27,11 +27,21 @@ def find_longest_word(file):
 
 # book solution
 
-def find_all_longest_words(dirname):
+# def find_all_longest_words(dirname):
+#     return {
+#         filename: find_longest_word(os.path.join(dirname, filename))
+#         for filename in os.listdir(dirname) 
+#         if os.path.isfile(os.path.join(dirname, filename))
+#         }
+
+# trying with pathlib
+import pathlib, glob
+
+def find_all_longest_words(directory):
+    p = pathlib.Path(directory)
     return {
-        filename: find_longest_word(os.path.join(dirname, filename))
-        for filename in os.listdir(dirname) 
-        if os.path.isfile(os.path.join(dirname, filename))
-        }
+        str(filename).split('/')[1]: find_longest_word(filename)
+        for filename in p.glob('*.txt')
+    }
 
 print(find_all_longest_words('books'))
