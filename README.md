@@ -13,4 +13,11 @@ Exercises from the Python Workout book
                 break
         print(f'This chunk contains {len(one_chunk)} bytes')
     ```
-2. 
+2. ### Dictionary comprehension
+   ```
+   return {
+        filename: find_longest_word(os.path.join(dirname, filename))    <--- key, value
+        for filename in os.listdir(dirname)                             <--- loop and filter
+        if os.path.isfile(os.path.join(dirname, filename))
+        }
+   ```
